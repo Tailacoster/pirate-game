@@ -8,7 +8,8 @@ public class PirateShip : MonoBehaviour
     [Tooltip("In unity units per second")] [SerializeField] protected float accelerationSpeed = 10f;
     [Tooltip("In unity units per second")] [SerializeField] protected float decelerationSpeed = 1f;
     [Tooltip("In unity units per second")][SerializeField] protected float maxSpeed = 20f;
-    [SerializeField] protected float rotationSpeed = 2f;
+    [Tooltip("In unity units per second, negative meaning moving backward")] [SerializeField] protected float minSpeed = 0f;
+    [Tooltip("In degrees per second, 360 being one full turn")][SerializeField] protected float rotationSpeed = 90f;
 
     protected float currentSpeed = 0f;
     protected bool anchorDropped = false;
@@ -22,7 +23,8 @@ public class PirateShip : MonoBehaviour
 	
 	protected virtual void Update()
 	{
-		
+        Move();
+        Rotate();
 	}
 
     /// <summary>
@@ -30,7 +32,15 @@ public class PirateShip : MonoBehaviour
     /// </summary>
     protected virtual void Move()
     {
+        // AI movement code, player script overwrites this
+    }
 
+    /// <summary>
+    /// Rotates the ship (defaultly according to AI conditionals)
+    /// </summary>
+    protected virtual void Rotate()
+    {
+        // AI rotation code, player script overwrites this
     }
 
     /// <summary>
@@ -39,8 +49,11 @@ public class PirateShip : MonoBehaviour
     /// </summary>
     protected void CalculateAcceleratingSpeed()
     {
-        currentSpeed += accelerationSpeed * Time.deltaTime;
-        if (currentSpeed > maxSpeed)
+        if (currentSpeed < maxSpeed)
+        {
+            currentSpeed += accelerationSpeed * Time.deltaTime;
+        }
+        else
         {
             currentSpeed = maxSpeed;
         }
@@ -53,6 +66,13 @@ public class PirateShip : MonoBehaviour
     /// <param name="scaleFactor">Factor to scale the rate of deceleration, 1 being normal speed, 2 double, 0.5 half</param>
     protected void CalculateDecelerationSpeed(float scaleFactor)
     {
-        currentSpeed -= decelerationSpeed * Time.deltaTime * scaleFactor;
+        if (currentSpeed > minSpeed)
+        {
+            currentSpeed -= decelerationSpeed * Time.deltaTime * scaleFactor;
+        }
+        else
+        {
+            currentSpeed = minSpeed;
+        }
     }
 }
