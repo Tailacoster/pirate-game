@@ -13,56 +13,46 @@ public class Player : PirateShip
     {
         base.Update();
 
-        Move();
-        Rotate();
         Anchor();
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            // drop anchor
-        }
     }
 
-    /// <summary>
-    /// Moves the player ship
-    /// </summary>
     protected override void Move()
     {
-        if (Input.GetKey(KeyCode.W) && !anchorDropped)
+        if (Input.GetKey(KeyCode.W) && !anchorDropped) // may change to GetAxis and Anchor functionality
         {
             CalculateAcceleratingSpeed();
         }
         else
         {
-            if (currentSpeed > 0 && !anchorDropped)
+            if (!anchorDropped)
             {
                 CalculateDecelerationSpeed(1f);
             }
-            else if (currentSpeed > 0 && anchorDropped)
+            else if (anchorDropped)
             {
                 CalculateDecelerationSpeed(3f);
             }
-            else
-            {
-                currentSpeed = 0;
-            }
         }
+
         transform.Translate(Vector2.down * currentSpeed * Time.deltaTime);
-        Debug.Log(currentSpeed);
     }
 
-    private void Rotate()
+    protected override void Rotate()
     {
+        float rotationThisFrame = rotationSpeed * Time.deltaTime;
+
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, 0, rotationSpeed);
+            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0, 0, -rotationSpeed);
+            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
     }
 
+    // Drops the anchor - currently slows down deceleration speed by 3 (hard baked into code), will change later 
+    // unless this functionality is maintained
     private void Anchor()
     {
         if (Input.GetKeyDown(KeyCode.S))
