@@ -39,8 +39,6 @@ public class Player : PirateShip
 
     protected override void Rotate()
     {
-        float rotationThisFrame = rotationSpeed * Time.deltaTime;
-
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
