@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845660527967000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.81, y: 2, z: 0}
+  m_LocalPosition: {x: -1.83, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,7 +121,14 @@ MonoBehaviour:
   decelerationSpeed: 1
   maxSpeed: 3
   minSpeed: 0
-  rotationSpeed: 90
+  rotationSpeed: 70
+  maxHealth: 100
+  shipSprites:
+  - {fileID: 21300000, guid: c476723f9d2ba444fb5f3acc688a7f80, type: 3}
+  - {fileID: 21300000, guid: 800aa2a5d6117284cb72d8d1d0b32f99, type: 3}
+  - {fileID: 21300000, guid: 741ca8e801d19d544a1fb690f51b75b7, type: 3}
+  - {fileID: 21300000, guid: 45a3d99a6e3103b43bc025d19d6def73, type: 3}
+  spritePercentages: 500000002800000000000000
 --- !u!212 &212346446064083032
 SpriteRenderer:
   m_ObjectHideFlags: 1
