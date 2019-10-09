@@ -39,9 +39,21 @@ public class PirateShip : MonoBehaviour
 	{
         Move();
         Rotate();
+
         //
         CheckAndUpdateSprite(); // MOVE THIS to whenever the player takes damage or gains health
         //
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentHealth += 5;
+            Debug.Log(currentHealth);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentHealth -= 5;
+            Debug.Log(currentHealth);
+        }
 	}
 
     /// <summary>
@@ -100,7 +112,6 @@ public class PirateShip : MonoBehaviour
     /// <param name="numOfSpritesToChange">How many sprites to move through (usually only 1). Always put positive number.</param>
     protected void UpdateShipSpriteByAmount(int upOrDown, int numOfSpritesToChange)
     {
-        int spriteCountBeforeChange = currentSpriteCount;
         currentSpriteCount -= upOrDown * numOfSpritesToChange;
         if (currentSpriteCount >= 0 && currentSpriteCount < shipSprites.Length) // stay in bounds of array
         {
