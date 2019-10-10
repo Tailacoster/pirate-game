@@ -9,7 +9,10 @@ public class CameraFollow : MonoBehaviour
 
 	void Start()
 	{
-
+        if (target == null)
+        {
+            target = FindObjectOfType<Player>();
+        }
 	}
 	
 	void Update()
