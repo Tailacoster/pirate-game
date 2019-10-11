@@ -4,22 +4,22 @@ This file contains relevant information on how to go about contributing to the p
 ## Using Unity Hub
 
 #### Launch Unity Hub
-After installing, launch Unity Hub. You will want to install Unity 2018.2.18f1, the most recent version of Unity as of the writing of this document, and the version this game is being developed in. Make sure to install build support for Android, iOS, Windows, Mac and Linux, as well as any other things you anticiapte needing.
+After installing, launch Unity Hub. You will want to install Unity 2019.2.8f1, the most recent version of Unity as of the writing of this document, and the version this game is being developed in. Make sure to install build support for Windows, Mac and Linux. It may be useful to install Android and iOS build support in case this project moves to mobile.
 
 #### Link With Repository
-If you've already cloned the repository, you will need to link it up the game project within to Unity Hub so you can launch the project. This can be done by clicking the "Open" button and navigating to the repository folder. Highlight over the project folder within the repository folder and click the "Select folder" button. It will launch the game project and you will now have quick access to the project when you launch Unity Hub.
+If you've already cloned the repository, you will need to link it up to the game project within Unity Hub so you can launch the project. This can be done by clicking the "Open" button and navigating to the repository folder. Highlight over the project folder within the repository folder and click the "Select folder" button. It will launch the game project and you will now have quick access to the project when you launch Unity Hub.
 
 ## Using GitHub Desktop
 
 #### Launch GitHub Desktop
-After installing, there should be a shortcut automatically created on your desktop. After launching, you should be prompted to login to your GitHub account. You can create an account if you don't have one. After linking up your account, you will be able to clone our repository to your machine.
+After installing, there should be a shortcut automatically created on your desktop. After launching, you should be prompted to login to your GitHub account. You can create an account online if you don't have one. After linking up your account, you will be able to clone this repository to your machine.
 
 #### Clone Repository
 You will need to clone the online, up-to-date information of the repository to your local machine to be able to test and make changes to it. Select the "clone repository" button on the right side of the window. Head over to the home screen of the online repository and select the green button on the top-right side of the screen that says "Clone or download". Copy the URL link in there, and paste it into your GitHub Desktop application to clone the repository.
 
 #### Branches
 
-Branches are an important aspect to how we will collaborate on our project. Essentially, each branch is its own instance of the project. If you make changes on your own branch, it will not affect any other branches of the project but your own. Just as the project you have cloned is a local version of the project that does not change the project in real-time, the branches you access in GitHub Desktop are also local. This means that all changes you make on your branch are not synced up with your online branch until you push to it.
+Branches are an important aspect to how we will collaborate on our project. Essentially, each branch is its own instance of the project. If you make changes on your own branch, it will not affect any other branches of the project but your own. This functionality allows multiple people to collaborate on the project at once without overwriting what the others are doing. Just as the project you have cloned is a local version of the project that does not change the project in real-time, the branches you access in GitHub Desktop are also local. This means that all changes you make on your branch are not synced up with your online branch until you push to it. You will want to create a branch for yourself to use throughout the project.
 
 #### GitHub Desktop Workflow
 
